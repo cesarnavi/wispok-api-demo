@@ -13,7 +13,7 @@ Live demo: https://blog-example-gules-pi.vercel.app/
 #### Prerequisites:
 - Node.js 18 or higher
 - MongoDB Server installed
-
+- Npm or yarn
 #### Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
