@@ -34,5 +34,5 @@ Steps to launch locally
 
 #### Notes
 
- - src/data/dummy_users.xlsx contains a list of dummy users in order to fill database, add rows as needed, to disable this function set NODE_ENV=production in .env file
+ - src/data/dummy_users.xlsx contains a list of dummy users in order to fill database, add rows as needed preserving colums order, to disable this function set NODE_ENV=production in .env file
  - Swagger documentation should be available in non production enviorment, set NODE_ENV=production in .env file to disable it.

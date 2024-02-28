@@ -1,6 +1,6 @@
 import { Router} from "express";
 import { withJWT } from "../middlewares";
-import { createUser, getUsers, getUserById, updateUser } from "../controllers"
+import { createUser, getUsers, getUserById, updateUser, deleteUserById } from "../controllers"
 const usersRouter = Router();
 
 /**
@@ -190,5 +190,34 @@ usersRouter.get("/:userId", withJWT, getUserById);
  * 
 */
 usersRouter.put("/:userId", withJWT, updateUser);
+/**
+ * @swagger
+ * /users/{userId}:
+ *    delete:   
+ *      security:
+ *        - bearerAuth: []  
+ *      summary: Delete a single user by ID
+ *      parameters:
+ *        - in: path
+ *          name: userId
+ *          schema:
+ *            type: integer
+ *          required: true
+ *          description: Numeric ID of the user to delete
+ * 
+ *      responses:
+ *       '200':
+ *         description: OK
+ *       '400':
+ *         description: Bad request. User ID must be an integer and larger than 0 or user does not exists
+ *       '401':
+ *         description: Authorization information is missing or invalid.
+ *       '5XX':
+ *         description: Unexpected error.
+ * 
+ * 
+*/
+usersRouter.delete("/:userId", withJWT, deleteUserById);
+
 
 export default usersRouter;

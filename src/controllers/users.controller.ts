@@ -157,6 +157,25 @@ export async function getUserById(req: Request, res: Response){
   return res.status(200).send(user);
 
 }
+export async function deleteUserById(req: Request, res: Response){
+  const { userId } = req.params;
+  if(!userId){
+    return onError(res, "Invalid ID");
+  }
+ 
+  const user = await User.findOne({ id: userId });
+  if(!user){
+    return onError(res,"User not found");
+  }
+
+  await User.deleteOne({
+    id: userId
+  })
+  
+
+  return res.status(202).send("ok");
+
+}
 
 export async function updateUser(req: Request, res: Response){
   const { userId } = req.params;
@@ -196,7 +215,9 @@ export async function updateUser(req: Request, res: Response){
   let alreadyExistEmail = email && (await User.countDocuments({ email: email }));
   if (alreadyExistEmail) {
     return onError(res, "Email already exists");
-  }else{
+  }
+
+  if(email){
     update.email = email;
   }
 
