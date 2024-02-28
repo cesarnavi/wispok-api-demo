@@ -78,7 +78,7 @@ class Server {
                     info:{
                         version: "1.0.0",
                         title: "Wispok API Documentation",
-                        description: "Desc"
+                        description: "A basic example of CRUD for users"
                     },
                 
                     servers: [
