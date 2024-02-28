@@ -6,7 +6,7 @@ async function run(){
 	await Server.loadDatabase();
 	//Load excel file for dummy data
 	if(process.env.NODE_ENV != "production"){
-		// await Server.loadDummyData();
+		await Server.loadDummyData();
 	}
 	
 	Server.loadServer();
