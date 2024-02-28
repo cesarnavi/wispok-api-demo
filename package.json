@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf dist/ wispok.log",
     "copy-files": "copyfiles -u 1 \"src/data/**/*\" dist",
-    "build": "npm run clean && tsc && npm run copy-files",
+    "build": "npm run clean && tsc -p tsconfig.json && npm run copy-files",
     "dev": "ts-node src",
     "lint": "tslint 'src/**/*.ts' --fix",
     "start": "node dist"
