@@ -19,7 +19,9 @@ Live demo: https://blog-example-gules-pi.vercel.app/
 To run this project, you will need to add the following environment variables to your .env file
 
 `MONGOOSE_URI` mongodb://USER:PASSWORD@HOST:PORT/DB_NAME
+
 `JWT_SECRET` mongodb://USER:PASSWORD@HOST:PORT/DB_NAME
+
 `NODE_ENV`  development | production 
 
 
